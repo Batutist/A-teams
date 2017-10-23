@@ -13,6 +13,7 @@
 		7D63817A1F98ACE8008CAAE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D6381781F98ACE8008CAAE1 /* LaunchScreen.storyboard */; };
 		7D6381861F98B858008CAAE1 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6381851F98B858008CAAE1 /* CardCollectionViewCell.swift */; };
 		7D6381891F98BCE2008CAAE1 /* FirstCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6381881F98BCE2008CAAE1 /* FirstCollectionViewController.swift */; };
+		7DA2B9551F9E8C36004F3F2C /* MainScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B9541F9E8C36004F3F2C /* MainScreenTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		7D6381851F98B858008CAAE1 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		7D6381881F98BCE2008CAAE1 /* FirstCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionViewController.swift; sourceTree = "<group>"; };
 		7DA2B9511F9E899C004F3F2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7DA2B9541F9E8C36004F3F2C /* MainScreenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				7D63816F1F98ACE8008CAAE1 /* AppDelegate.swift */,
 				7D6381711F98ACE8008CAAE1 /* ViewController.swift */,
 				7D6381731F98ACE8008CAAE1 /* Main.storyboard */,
+				7DA2B9541F9E8C36004F3F2C /* MainScreenTableViewController.swift */,
 				7D6381871F98B85F008CAAE1 /* main screen with 5 cards */,
 				7D6381781F98ACE8008CAAE1 /* LaunchScreen.storyboard */,
 				7DA2B9511F9E899C004F3F2C /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D6381861F98B858008CAAE1 /* CardCollectionViewCell.swift in Sources */,
+				7DA2B9551F9E8C36004F3F2C /* MainScreenTableViewController.swift in Sources */,
 				7D6381721F98ACE8008CAAE1 /* ViewController.swift in Sources */,
 				7D6381891F98BCE2008CAAE1 /* FirstCollectionViewController.swift in Sources */,
 				7D6381701F98ACE8008CAAE1 /* AppDelegate.swift in Sources */,

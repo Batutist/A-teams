@@ -399,10 +399,10 @@
             </objects>
             <point key="canvasLocation" x="1532" y="-608"/>
         </scene>
-        <!--Cards Table View Controller-->
+        <!--Main Screen Table View Controller-->
         <scene sceneID="aIF-Fj-p1t">
             <objects>
-                <tableViewController id="yqj-lC-9QQ" customClass="CardsTableViewController" customModule="A_teams_test" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="yqj-lC-9QQ" customClass="MainScreenTableViewController" customModule="A_teams_test" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="111" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kAD-RM-gzX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
