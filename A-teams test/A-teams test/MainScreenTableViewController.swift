@@ -33,16 +33,72 @@ class MainScreenTableViewController: UITableViewController {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         if sender == postsButton {
-            print("posts button")
+            
+            if postIdTextfield.text == "" || postIdTextfield.text == nil {
+                let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели ID.", preferredStyle: .alert)
+                let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(OK)
+                present(alertController, animated: true, completion: nil)
+//            } else if postIdTextfield.text!.count > 100 || postIdTextfield.text!.count < 1 {
+//                let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели слишком большой номер ID. Введите цифру от 1 до 100.", preferredStyle: .alert)
+//                let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
+//                alertController.addAction(OK)
+//                present(alertController, animated: true, completion: nil)
+            } else {
+                let postId = postIdTextfield.text
+                print("\(postId)")
+            }
+            
         } else if sender == commentsButton {
-            print("comments button")
+            
+            if commentIdTextfield.text == "" || commentIdTextfield.text == nil {
+                let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели ID.", preferredStyle: .alert)
+                let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(OK)
+                present(alertController, animated: true, completion: nil)
+            } else {
+                let commentId = commentIdTextfield.text
+                print("\(commentId)")
+            }
+            
         } else if sender == usersButton {
-            print("users button")
+            
+            if userIdTextfield.text == "" || userIdTextfield.text == nil {
+                let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели ID.", preferredStyle: .alert)
+                let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(OK)
+                present(alertController, animated: true, completion: nil)
+            } else {
+                let userId = userIdTextfield.text
+                print("\(userId)")
+            }
+            
         } else if sender == photosButton {
-            print("photos button")
+            
+            if photoIdTextfield.text == "" || photoIdTextfield.text == nil {
+                let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели ID.", preferredStyle: .alert)
+                let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(OK)
+                present(alertController, animated: true, completion: nil)
+            } else {
+                let photoId = photoIdTextfield.text
+                print("\(photoId)")
+            }
+            
         } else if sender == toDosButton {
-            print("toDos button")
+            
+            if toDoIdTextfield.text == "" || toDoIdTextfield.text == nil {
+                let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели ID.", preferredStyle: .alert)
+                let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(OK)
+                present(alertController, animated: true, completion: nil)
+            } else {
+                let toDoId = toDoIdTextfield.text
+                print("\(toDoId)")
+            }
         }
+        
+        
     }
     
     
@@ -58,10 +114,6 @@ class MainScreenTableViewController: UITableViewController {
         toDosImage.image = UIImage(named: "ToDos")
         
         
-        let postId = postIdTextfield.text
-        let commentId = commentIdTextfield.text
-        let userId = userIdTextfield.text
-        let photoId = photoIdTextfield.text
-        let toDoId = toDoIdTextfield.text
+        
     }
 }

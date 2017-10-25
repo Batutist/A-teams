@@ -14,7 +14,16 @@ class ManagerData {
     
     func loadJSON() {
         
-        let url = "https://jsonplaceholder.typicode.com/posts"
+        let postsUrl = "https://jsonplaceholder.typicode.com/posts"
+        let commentsUrl = "https://jsonplaceholder.typicode.com/comments"
+        let usersUrl = "https://jsonplaceholder.typicode.com/users"
+        let photosUrl = "https://jsonplaceholder.typicode.com/photos"
+        let toDosUrl = "https://jsonplaceholder.typicode.com/todos"
+        
+        let urlArray = [postsUrl, commentsUrl, usersUrl, photosUrl, toDosUrl]
+        
+        
+        
         Alamofire.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
