@@ -79,13 +79,26 @@ class ManagerData {
                     case .failure(let error):
                         print(error)
                     }
+                    
                 } else if url == photosUrl {
+                    switch response.result {
+                    case .success(let value):
+                        let json = JSON(value)
+                        
+                        for (_, subJson) in json {
+                            let photoId = subJson["id"].intValue
+                            let photoTitle = subJson["title"].stringValue
+                            let photoURL = subJson["url"].stringValue
+                            let thumbnailUrl = subJson["thumbnailUrl"].stringValue
+                        }
+                    case .failure(let error):
+                        print(error)
+                    }
                     
                 } else {
                     switch response.result {
                     case .success(let value):
                         let json = JSON(value)
-                        
                         
                         for (_, subJson) in json {
                             let id = subJson["id"].intValue
