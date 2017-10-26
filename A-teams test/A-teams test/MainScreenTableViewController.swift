@@ -31,6 +31,7 @@ class MainScreenTableViewController: UITableViewController {
     @IBOutlet weak var toDosButton: UIButton!
     
     
+    
     @IBAction func buttonPressed(_ sender: UIButton) {
         if sender == postsButton {
             
@@ -46,7 +47,7 @@ class MainScreenTableViewController: UITableViewController {
 //                present(alertController, animated: true, completion: nil)
             } else {
                 let postId = postIdTextfield.text
-                print("\(postId)")
+                print("\(postId!)")
             }
             
         } else if sender == commentsButton {
@@ -58,7 +59,7 @@ class MainScreenTableViewController: UITableViewController {
                 present(alertController, animated: true, completion: nil)
             } else {
                 let commentId = commentIdTextfield.text
-                print("\(commentId)")
+                print("\(commentId!)")
             }
             
         } else if sender == usersButton {
@@ -70,7 +71,7 @@ class MainScreenTableViewController: UITableViewController {
                 present(alertController, animated: true, completion: nil)
             } else {
                 let userId = userIdTextfield.text
-                print("\(userId)")
+                print("\(userId!)")
             }
             
         } else if sender == photosButton {
@@ -82,7 +83,7 @@ class MainScreenTableViewController: UITableViewController {
                 present(alertController, animated: true, completion: nil)
             } else {
                 let photoId = photoIdTextfield.text
-                print("\(photoId)")
+                print("\(photoId!)")
             }
             
         } else if sender == toDosButton {
@@ -94,7 +95,7 @@ class MainScreenTableViewController: UITableViewController {
                 present(alertController, animated: true, completion: nil)
             } else {
                 let toDoId = toDoIdTextfield.text
-                print("\(toDoId)")
+                print("\(toDoId!)")
             }
         }
         
