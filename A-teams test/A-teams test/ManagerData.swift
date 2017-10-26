@@ -28,7 +28,7 @@ class ManagerData {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                        
+                
                         for (_, subJson) in json {
                             let id = subJson["id"].intValue
                             let toDoTitle = subJson["title"].stringValue
