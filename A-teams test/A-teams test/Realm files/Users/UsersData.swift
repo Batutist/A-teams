@@ -24,7 +24,7 @@ class UsersData: Object {
     @objc dynamic var userCompanyName = ""
     @objc dynamic var userCompanyCatchPhrase = ""
     
-    override static func primaryKey() -> String {
-        return "userId"
-    }
+//    override static func primaryKey() -> String {
+//        return "userId"
+//    }
 }

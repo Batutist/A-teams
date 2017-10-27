@@ -14,7 +14,7 @@ class ToDosData: Object {
     @objc dynamic var toDoTitle = ""
     @objc dynamic var completed = false
     
-    override static func primaryKey() -> String {
-        return "toDoId"
-    }
+//    override static func primaryKey() -> String {
+//        return "toDoId"
+//    }
 }

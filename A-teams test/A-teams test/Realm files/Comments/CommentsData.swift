@@ -15,7 +15,7 @@ class CommentsData: Object {
     @objc dynamic var commentEmail = ""
     @objc dynamic var commentBody = ""
     
-    override static func primaryKey() -> String {
-        return "commentId"
-    }
+//    override static func primaryKey() -> String {
+//        return "commentId"
+//    }
 }

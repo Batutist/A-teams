@@ -15,7 +15,7 @@ class PhotosData: Object {
     @objc dynamic var thumbnailUrl = ""
     @objc dynamic var photoURL = ""
     
-    override static func primaryKey() -> String {
-        return "photoId"
-    }
+//    override static func primaryKey() -> String {
+//        return "photoId"
+//    }
 }
