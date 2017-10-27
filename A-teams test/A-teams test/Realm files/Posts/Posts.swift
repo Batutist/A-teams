@@ -10,5 +10,11 @@ import Foundation
 import  RealmSwift
 
 class Posts: Object {
-    var tempList = List<PostsData>()
+    @objc dynamic var postId = 0
+    @objc dynamic var postTitle = ""
+    @objc dynamic var postBody = ""
+    
+    override static func primaryKey() -> String {
+        return "postId"
+    }
 }

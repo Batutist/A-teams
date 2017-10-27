@@ -13,11 +13,6 @@
 		7D12F8771FA32E200000BA24 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D12F8761FA32E200000BA24 /* Users.swift */; };
 		7D12F8791FA32E280000BA24 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D12F8781FA32E280000BA24 /* Photos.swift */; };
 		7D12F87B1FA32E310000BA24 /* ToDos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D12F87A1FA32E310000BA24 /* ToDos.swift */; };
-		7D12F87E1FA32F140000BA24 /* PhotosData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D12F87D1FA32F140000BA24 /* PhotosData.swift */; };
-		7D12F8811FA330330000BA24 /* UsersData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D12F8801FA330330000BA24 /* UsersData.swift */; };
-		7D12F8841FA331E00000BA24 /* CommentsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D12F8831FA331E00000BA24 /* CommentsData.swift */; };
-		7D12F8871FA3327A0000BA24 /* PostsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D12F8861FA3327A0000BA24 /* PostsData.swift */; };
-		7D12F88A1FA333520000BA24 /* ToDosData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D12F8891FA333520000BA24 /* ToDosData.swift */; };
 		7D6381701F98ACE8008CAAE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63816F1F98ACE8008CAAE1 /* AppDelegate.swift */; };
 		7D6381751F98ACE8008CAAE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D6381731F98ACE8008CAAE1 /* Main.storyboard */; };
 		7D63817A1F98ACE8008CAAE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D6381781F98ACE8008CAAE1 /* LaunchScreen.storyboard */; };
@@ -32,11 +27,6 @@
 		7D12F8761FA32E200000BA24 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		7D12F8781FA32E280000BA24 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		7D12F87A1FA32E310000BA24 /* ToDos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDos.swift; sourceTree = "<group>"; };
-		7D12F87D1FA32F140000BA24 /* PhotosData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosData.swift; sourceTree = "<group>"; };
-		7D12F8801FA330330000BA24 /* UsersData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersData.swift; sourceTree = "<group>"; };
-		7D12F8831FA331E00000BA24 /* CommentsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsData.swift; sourceTree = "<group>"; };
-		7D12F8861FA3327A0000BA24 /* PostsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsData.swift; sourceTree = "<group>"; };
-		7D12F8891FA333520000BA24 /* ToDosData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosData.swift; sourceTree = "<group>"; };
 		7D63816C1F98ACE8008CAAE1 /* A-teams test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A-teams test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D63816F1F98ACE8008CAAE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D6381741F98ACE8008CAAE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				7D12F8781FA32E280000BA24 /* Photos.swift */,
-				7D12F87D1FA32F140000BA24 /* PhotosData.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -104,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				7D12F8761FA32E200000BA24 /* Users.swift */,
-				7D12F8801FA330330000BA24 /* UsersData.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -113,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				7D12F8741FA32E0C0000BA24 /* Comments.swift */,
-				7D12F8831FA331E00000BA24 /* CommentsData.swift */,
 			);
 			path = Comments;
 			sourceTree = "<group>";
@@ -122,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				7D12F8721FA32E020000BA24 /* Posts.swift */,
-				7D12F8861FA3327A0000BA24 /* PostsData.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -131,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				7D12F87A1FA32E310000BA24 /* ToDos.swift */,
-				7D12F8891FA333520000BA24 /* ToDosData.swift */,
 			);
 			path = ToDos;
 			sourceTree = "<group>";
@@ -302,16 +287,11 @@
 			files = (
 				7DA2B9551F9E8C36004F3F2C /* MainScreenTableViewController.swift in Sources */,
 				7D12F8751FA32E0C0000BA24 /* Comments.swift in Sources */,
-				7D12F87E1FA32F140000BA24 /* PhotosData.swift in Sources */,
 				7D6381701F98ACE8008CAAE1 /* AppDelegate.swift in Sources */,
 				7DB77AF71F9F53A700F6BE43 /* ManagerData.swift in Sources */,
 				7D12F8771FA32E200000BA24 /* Users.swift in Sources */,
 				7D12F8731FA32E020000BA24 /* Posts.swift in Sources */,
 				7D12F8791FA32E280000BA24 /* Photos.swift in Sources */,
-				7D12F8811FA330330000BA24 /* UsersData.swift in Sources */,
-				7D12F88A1FA333520000BA24 /* ToDosData.swift in Sources */,
-				7D12F8871FA3327A0000BA24 /* PostsData.swift in Sources */,
-				7D12F8841FA331E00000BA24 /* CommentsData.swift in Sources */,
 				7D12F87B1FA32E310000BA24 /* ToDos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

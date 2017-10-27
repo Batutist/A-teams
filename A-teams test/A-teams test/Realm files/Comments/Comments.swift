@@ -10,5 +10,12 @@ import Foundation
 import  RealmSwift
 
 class Comments: Object {
-    var tempList = List<CommentsData>()
+    @objc dynamic var commentId = 0
+    @objc dynamic var commentName = ""
+    @objc dynamic var commentEmail = ""
+    @objc dynamic var commentBody = ""
+    
+    override static func primaryKey() -> String {
+        return "commentId"
+    }
 }

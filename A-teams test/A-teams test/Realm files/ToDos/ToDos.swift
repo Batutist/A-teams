@@ -10,5 +10,11 @@ import Foundation
 import  RealmSwift
 
 class ToDos: Object {
-    var tempList = List<ToDosData>()
+    @objc dynamic var toDoId = 0
+    @objc dynamic var toDoTitle = ""
+    @objc dynamic var completed = false
+    
+    override static func primaryKey() -> String {
+        return "toDoId"
+    }
 }

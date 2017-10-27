@@ -10,5 +10,12 @@ import Foundation
 import  RealmSwift
 
 class Photos: Object {
-    var tempList = List<PhotosData>()
+    @objc dynamic var photoId = 0
+    @objc dynamic var photoTitle = ""
+    @objc dynamic var thumbnailUrl = ""
+    @objc dynamic var photoURL = ""
+    
+    override static func primaryKey() -> String {
+        return "photoId"
+    }
 }
