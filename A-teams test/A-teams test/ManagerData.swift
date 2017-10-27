@@ -13,7 +13,7 @@ import RealmSwift
 
 class ManagerData {
     
-    func getPostFromDB() -> Results<Posts> {
+    func getPostFromDB(postId: Int) -> Results<Posts> {
         let realm = try! Realm()
         let post = realm.objects(Posts.self)
         return post
@@ -73,6 +73,7 @@ class ManagerData {
                             post.postTitle = subJson["title"].stringValue
                             post.postBody = subJson["body"].stringValue
                             
+                            //пробуем записать в базу пост
                             try! realm.write {
                                 realm.add(post, update: true)
                             }

@@ -17,6 +17,7 @@
 		7D6381751F98ACE8008CAAE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D6381731F98ACE8008CAAE1 /* Main.storyboard */; };
 		7D63817A1F98ACE8008CAAE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D6381781F98ACE8008CAAE1 /* LaunchScreen.storyboard */; };
 		7DA2B9551F9E8C36004F3F2C /* MainScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B9541F9E8C36004F3F2C /* MainScreenTableViewController.swift */; };
+		7DA7FE091FA347FF008AFDEB /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA7FE081FA347FF008AFDEB /* PostsViewController.swift */; };
 		7DB77AF71F9F53A700F6BE43 /* ManagerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB77AF61F9F53A700F6BE43 /* ManagerData.swift */; };
 		7DB77AF91F9F5BAE00F6BE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB77AF81F9F5BAE00F6BE43 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,7 @@
 		7D6381791F98ACE8008CAAE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D63817B1F98ACE8008CAAE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DA2B9541F9E8C36004F3F2C /* MainScreenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTableViewController.swift; sourceTree = "<group>"; };
+		7DA7FE081FA347FF008AFDEB /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		7DB77AF61F9F53A700F6BE43 /* ManagerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerData.swift; sourceTree = "<group>"; };
 		7DB77AF81F9F5BAE00F6BE43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B69B4BBF02A2DB9D9AF9C34A /* Pods_A_teams_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_A_teams_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 				7D6381731F98ACE8008CAAE1 /* Main.storyboard */,
 				7D63816F1F98ACE8008CAAE1 /* AppDelegate.swift */,
 				7DB77AF61F9F53A700F6BE43 /* ManagerData.swift */,
+				7DA7FE081FA347FF008AFDEB /* PostsViewController.swift */,
 				7D12F87C1FA32E630000BA24 /* Realm files */,
 				7DA2B9541F9E8C36004F3F2C /* MainScreenTableViewController.swift */,
 				7DB77AF81F9F5BAE00F6BE43 /* Assets.xcassets */,
@@ -288,6 +291,7 @@
 				7DA2B9551F9E8C36004F3F2C /* MainScreenTableViewController.swift in Sources */,
 				7D12F8751FA32E0C0000BA24 /* Comments.swift in Sources */,
 				7D6381701F98ACE8008CAAE1 /* AppDelegate.swift in Sources */,
+				7DA7FE091FA347FF008AFDEB /* PostsViewController.swift in Sources */,
 				7DB77AF71F9F53A700F6BE43 /* ManagerData.swift in Sources */,
 				7D12F8771FA32E200000BA24 /* Users.swift in Sources */,
 				7D12F8731FA32E020000BA24 /* Posts.swift in Sources */,
