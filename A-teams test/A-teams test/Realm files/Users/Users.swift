@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import  RealmSwift
+
+class Users: Object {
+    var tempList = List<UsersData>()
+}

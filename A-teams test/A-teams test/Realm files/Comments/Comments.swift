@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import  RealmSwift
+
+class Comments: Object {
+    var tempList = List<CommentsData>()
+}

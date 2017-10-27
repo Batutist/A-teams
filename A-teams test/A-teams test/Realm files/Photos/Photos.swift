@@ -9,6 +9,6 @@
 import Foundation
 import  RealmSwift
 
-class UserPhotos: Object {
+class Photos: Object {
     var tempList = List<PhotosData>()
 }

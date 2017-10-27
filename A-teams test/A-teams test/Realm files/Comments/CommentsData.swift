@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import RealmSwift
+
+class CommentsData: Object {
+    @objc dynamic var commentId = 0
+    @objc dynamic var commentName = ""
+    @objc dynamic var commentEmail = ""
+    @objc dynamic var commentBody = ""
+    
+    override static func primaryKey() -> String {
+        return "commentId"
+    }
+}

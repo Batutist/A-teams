@@ -9,10 +9,14 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 class ManagerData {
     
     func loadJSON() {
+        print("Путь к файлам \(Realm.Configuration.defaultConfiguration.fileURL)")
+        
+        let realm = try! Realm()
         
         let postsUrl = "https://jsonplaceholder.typicode.com/posts"
         let commentsUrl = "https://jsonplaceholder.typicode.com/comments"
@@ -30,13 +34,23 @@ class ManagerData {
                 if url == postsUrl {
                     switch response.result {
                     case .success(let value):
+                        let posts = Posts()
+                        
                         let json = JSON(value)
                         
                         for (_, subJson) in json {
-                            let id = subJson["id"].intValue
-                            let postTitle = subJson["title"].stringValue
-                            let postBody = subJson["body"].stringValue
+                            let tmp = PostsData()
+                            
+                            tmp.postId = subJson["id"].intValue
+                            tmp.postTitle = subJson["title"].stringValue
+                            tmp.postBody = subJson["body"].stringValue
+                            posts.tempList.append(tmp)
                         }
+                        //пробуем записать в базу посты
+                        try! realm.write {
+                            realm.add(posts, update: true)
+                        }
+                        
                     case .failure(let error):
                         print(error)
                     }
@@ -44,14 +58,25 @@ class ManagerData {
                 } else if url == commentsUrl {
                     switch response.result {
                     case .success(let value):
+                        let comments = Comments()
+                        
                         let json = JSON(value)
                         
                         for (_, subJson) in json {
-                            let commentId = subJson["id"].intValue
-                            let commentName = subJson["name"].stringValue
-                            let commentEmail = subJson["email"].stringValue
-                            let commentBody = subJson["body"].stringValue
+                            let tmp = CommentsData()
+                            
+                            tmp.commentId = subJson["id"].intValue
+                            tmp.commentName = subJson["name"].stringValue
+                            tmp.commentEmail = subJson["email"].stringValue
+                            tmp.commentBody = subJson["body"].stringValue
+                            
+                            comments.tempList.append(tmp)
                         }
+                        //пробуем записать в базу комментарии
+                        try! realm.write {
+                            realm.add(comments, update: true)
+                        }
+                        
                     case .failure(let error):
                         print(error)
                     }
@@ -59,23 +84,35 @@ class ManagerData {
                 } else if url == usersUrl {
                     switch response.result {
                     case .success(let value):
+                        let users = Users()
+                        
                         let json = JSON(value)
                         
                         for (_, subJson) in json {
-                            let userId = subJson["id"].intValue
-                            let name = subJson["name"].stringValue
-                            let userName = subJson["username"].stringValue
-                            let userEmail = subJson["email"].stringValue
-                            let commentBody = subJson["body"].stringValue
-                            let userCity = subJson["address"]["city"].stringValue
-                            let userStreet = subJson["address"]["street"].stringValue
-                            let userSuite = subJson["address"]["suite"].stringValue
-                            let userZipcode = subJson["address"]["zipcode"].stringValue
-                            let userPhone = subJson["phone"].stringValue
-                            let userWebsite = subJson["website"].stringValue
-                            let userCompanyName = subJson["company"]["name"].stringValue
-                            let userCompanyCatchPhrase = subJson["company"]["catchPhrase"].stringValue
+                            let tmp = UsersData()
+                            
+                            tmp.userId = subJson["id"].intValue
+                            tmp.name = subJson["name"].stringValue
+                            tmp.userName = subJson["username"].stringValue
+                            tmp.userEmail = subJson["email"].stringValue
+                            tmp.commentBody = subJson["body"].stringValue
+                            tmp.userCity = subJson["address"]["city"].stringValue
+                            tmp.userStreet = subJson["address"]["street"].stringValue
+                            tmp.userSuite = subJson["address"]["suite"].stringValue
+                            tmp.userZipcode = subJson["address"]["zipcode"].stringValue
+                            tmp.userPhone = subJson["phone"].stringValue
+                            tmp.userWebsite = subJson["website"].stringValue
+                            tmp.userCompanyName = subJson["company"]["name"].stringValue
+                            tmp.userCompanyCatchPhrase = subJson["company"]["catchPhrase"].stringValue
+                            
+                            users.tempList.append(tmp)
                         }
+                        
+                        //пробуем записать в базу пользователей
+                        try! realm.write {
+                            realm.add(users, update: true)
+                        }
+                        
                     case .failure(let error):
                         print(error)
                     }
@@ -83,14 +120,26 @@ class ManagerData {
                 } else if url == photosUrl {
                     switch response.result {
                     case .success(let value):
+                        let photos = Photos()
+                        
                         let json = JSON(value)
                         
                         for (_, subJson) in json {
-                            let photoId = subJson["id"].intValue
-                            let photoTitle = subJson["title"].stringValue
-                            let photoURL = subJson["url"].stringValue
-                            let thumbnailUrl = subJson["thumbnailUrl"].stringValue
+                            let tmp = PhotosData()
+                            
+                            tmp.photoId = subJson["id"].intValue
+                            tmp.photoTitle = subJson["title"].stringValue
+                            tmp.photoURL = subJson["url"].stringValue
+                            tmp.thumbnailUrl = subJson["thumbnailUrl"].stringValue
+                            
+                            photos.tempList.append(tmp)
                         }
+                        
+                        //пробуем записать в базу фотографии
+                        try! realm.write {
+                            realm.add(photos, update: true)
+                        }
+                        
                     case .failure(let error):
                         print(error)
                     }
@@ -98,13 +147,25 @@ class ManagerData {
                 } else {
                     switch response.result {
                     case .success(let value):
+                        let toDos = ToDos()
+                        
                         let json = JSON(value)
                         
                         for (_, subJson) in json {
-                            let id = subJson["id"].intValue
-                            let toDoTitle = subJson["title"].stringValue
-                            let completed = subJson["completed"].boolValue
+                            let tmp = ToDosData()
+                            
+                            tmp.toDoId = subJson["id"].intValue
+                            tmp.toDoTitle = subJson["title"].stringValue
+                            tmp.completed = subJson["completed"].boolValue
+                            
+                            toDos.tempList.append(tmp)
                         }
+                        
+                        //пробуем записать в базу лист задач
+                        try! realm.write {
+                            realm.add(toDos, update: true)
+                        }
+                        
                     case .failure(let error):
                         print(error)
                     }

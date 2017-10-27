@@ -10,11 +10,12 @@ import Foundation
 import RealmSwift
 
 class PhotosData: Object {
-    @objc dynamic var userPhotoId = 0
-    @objc dynamic var userPhotoPreviewURL = ""
-    @objc dynamic var userPhotoURL = ""
+    @objc dynamic var photoId = 0
+    @objc dynamic var photoTitle = ""
+    @objc dynamic var thumbnailUrl = ""
+    @objc dynamic var photoURL = ""
     
     override static func primaryKey() -> String {
-        return "userPhotoId"
+        return "photoId"
     }
 }

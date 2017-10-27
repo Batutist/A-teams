@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import  RealmSwift
+
+class Posts: Object {
+    var tempList = List<PostsData>()
+}

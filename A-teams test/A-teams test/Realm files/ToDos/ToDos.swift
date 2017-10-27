@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import  RealmSwift
+
+class ToDos: Object {
+    var tempList = List<ToDosData>()
+}

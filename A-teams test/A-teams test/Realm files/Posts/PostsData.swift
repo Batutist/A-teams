@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import RealmSwift
+
+class PostsData: Object {
+    @objc dynamic var postId = 0
+    @objc dynamic var postTitle = ""
+    @objc dynamic var postBody = ""
+    
+    override static func primaryKey() -> String {
+        return "postId"
+    }
+}
