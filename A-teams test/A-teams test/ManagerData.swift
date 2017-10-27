@@ -13,6 +13,12 @@ import RealmSwift
 
 class ManagerData {
     
+    func getPostsFromDB() -> Results<Posts> {
+        let realm = try! Realm()
+        let posts = realm.objects(Posts.self)
+        return posts
+    }
+    
     func loadJSON() {
         print("Путь к файлам \(Realm.Configuration.defaultConfiguration.fileURL)")
         
