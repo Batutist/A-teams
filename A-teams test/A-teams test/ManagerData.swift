@@ -19,6 +19,30 @@ class ManagerData {
         return post
     }
     
+    func getCommentFromDB() -> Results<Comments> {
+        let realm = try! Realm()
+        let comment = realm.objects(Comments.self)
+        return comment
+    }
+    
+    func getUserFromDB() -> Results<Users> {
+        let realm = try! Realm()
+        let user = realm.objects(Users.self)
+        return user
+    }
+    
+    func getPhotoFromDB() -> Results<Photos> {
+        let realm = try! Realm()
+        let photo = realm.objects(Photos.self)
+        return photo
+    }
+    
+    func getToDoFromDB() -> Results<ToDos> {
+        let realm = try! Realm()
+        let toDo = realm.objects(ToDos.self)
+        return toDo
+    }
+    
     func loadJSON() {
         print("Путь к файлам \(Realm.Configuration.defaultConfiguration.fileURL)")
         
