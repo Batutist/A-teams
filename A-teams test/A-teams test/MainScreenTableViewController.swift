@@ -34,74 +34,81 @@ class MainScreenTableViewController: UITableViewController {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         if sender == postsButton {
+            let intPostIdTextfield = Int(postIdTextfield.text!)!
             
             if postIdTextfield.text == "" || postIdTextfield.text == nil {
-                let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели ID.", preferredStyle: .alert)
-                let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alertController.addAction(OK)
-                present(alertController, animated: true, completion: nil)
-//            } else if postIdTextfield.text!.count > 100 || postIdTextfield.text!.count < 1 {
-//                let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели слишком большой номер ID. Введите цифру от 1 до 100.", preferredStyle: .alert)
-//                let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
-//                alertController.addAction(OK)
-//                present(alertController, animated: true, completion: nil)
+                dontEnterIdNumber()
+            }
+            else if intPostIdTextfield > 100 || intPostIdTextfield < 1 {
+                wrongIdNumber()
             } else {
                 let postId = postIdTextfield.text
                 print("\(postId!)")
             }
-            
-        } else if sender == commentsButton {
+        }
+         else if sender == commentsButton {
+            let intCommentIdTextfield = Int(commentIdTextfield.text!)!
             
             if commentIdTextfield.text == "" || commentIdTextfield.text == nil {
-                let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели ID.", preferredStyle: .alert)
-                let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alertController.addAction(OK)
-                present(alertController, animated: true, completion: nil)
+                dontEnterIdNumber()
+            } else if intCommentIdTextfield < 1 || intCommentIdTextfield > 100 {
+                wrongIdNumber()
             } else {
                 let commentId = commentIdTextfield.text
                 print("\(commentId!)")
             }
             
         } else if sender == usersButton {
+            let intUserIdTextfield = Int(userIdTextfield.text!)!
             
             if userIdTextfield.text == "" || userIdTextfield.text == nil {
-                let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели ID.", preferredStyle: .alert)
-                let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alertController.addAction(OK)
-                present(alertController, animated: true, completion: nil)
+                dontEnterIdNumber()
+            } else if intUserIdTextfield < 1 || intUserIdTextfield > 100 {
+                wrongIdNumber()
             } else {
                 let userId = userIdTextfield.text
                 print("\(userId!)")
             }
             
         } else if sender == photosButton {
+            let intPhotoIdTextfield = Int(photoIdTextfield.text!)!
             
             if photoIdTextfield.text == "" || photoIdTextfield.text == nil {
-                let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели ID.", preferredStyle: .alert)
-                let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alertController.addAction(OK)
-                present(alertController, animated: true, completion: nil)
+                dontEnterIdNumber()
+            } else if intPhotoIdTextfield < 1 || intPhotoIdTextfield > 100 {
+                wrongIdNumber()
             } else {
                 let photoId = photoIdTextfield.text
                 print("\(photoId!)")
             }
             
         } else if sender == toDosButton {
+            let intToDoIdTextfield = Int(toDoIdTextfield.text!)!
             
             if toDoIdTextfield.text == "" || toDoIdTextfield.text == nil {
-                let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели ID.", preferredStyle: .alert)
-                let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alertController.addAction(OK)
-                present(alertController, animated: true, completion: nil)
-            } else {
+                dontEnterIdNumber()
+            } else if intToDoIdTextfield < 1 || intToDoIdTextfield > 100 {
+                wrongIdNumber()
+            }else {
                 let toDoId = toDoIdTextfield.text
                 print("\(toDoId!)")
             }
         }
-        
-        
     }
     
+    func dontEnterIdNumber() {
+        let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели ID.", preferredStyle: .alert)
+        let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(OK)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func wrongIdNumber() {
+        let alertController = UIAlertController(title: "Ошибка", message: "Вы ввели неверный номер ID. Введите цифру от 1 до 100.", preferredStyle: .alert)
+        let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(OK)
+        present(alertController, animated: true, completion: nil)
+    }
     
     
     override func viewDidLoad() {
@@ -117,4 +124,6 @@ class MainScreenTableViewController: UITableViewController {
         
         
     }
+    
+    
 }
