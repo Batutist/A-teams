@@ -13,7 +13,7 @@ import RealmSwift
 
 class ManagerData {
     
-    func getPostFromDB(postId: Int) -> Results<Posts> {
+    func getPostFromDB() -> Results<Posts> {
         let realm = try! Realm()
         let post = realm.objects(Posts.self)
         return post

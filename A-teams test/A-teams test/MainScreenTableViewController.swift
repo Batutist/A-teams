@@ -111,7 +111,7 @@ class MainScreenTableViewController: UITableViewController {
         postsImage.image = UIImage(named: "Posts")
         commentsImage.image = UIImage(named: "Comments")
         usersImage.image = UIImage(named: "Users")
-        photosImage.image = UIImage(named: "Users")
+        photosImage.image = UIImage(named: "Photos")
         toDosImage.image = UIImage(named: "ToDos")
         
         

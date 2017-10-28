@@ -10,13 +10,15 @@ import UIKit
 
 class PostsViewController: UIViewController {
 
-    let postId = 5
     override func viewDidLoad() {
+        let string = "5"
+        let postId: Int = Int(string)!
         super.viewDidLoad()
 
         let manager = ManagerData()
-//        manager.loadJSON(loadId: postId)
-        let posts = manager.getPostFromDB(postId: postId)
+        
+//        let predicate = NSPredicate(format: "postId = %@", 1)
+        let posts = manager.getPostFromDB().filter("postId = \(postId)")
         print("Here are all posts: \(posts)")
     }
 }
