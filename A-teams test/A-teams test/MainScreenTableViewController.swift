@@ -42,8 +42,14 @@ class MainScreenTableViewController: UITableViewController {
             else if intPostIdTextfield > 100 || intPostIdTextfield < 1 {
                 wrongIdNumber()
             } else {
-                let postId = postIdTextfield.text
-                print("\(postId!)")
+                func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                    if segue.identifier == "postsSegue" {
+                        if let postId = postIdTextfield.text {
+                            let destinationViewController = segue.destination as! PostsViewController
+                            destinationViewController.postId = postId
+                        }
+                    }
+                }
             }
         }
          else if sender == commentsButton {
@@ -91,7 +97,8 @@ class MainScreenTableViewController: UITableViewController {
                 wrongIdNumber()
             }else {
                 let toDoId = toDoIdTextfield.text
-                print("\(toDoId!)")
+//                print("\(toDoId!)")
+                
             }
         }
     }
