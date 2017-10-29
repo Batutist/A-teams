@@ -9,8 +9,15 @@
 import UIKit
 
 class PostsViewController: UIViewController {
-    var postId = ""
+    @IBOutlet weak var postIdLabel: UILabel!
+    @IBOutlet weak var postTitleLabel: UILabel!
+    @IBOutlet weak var postBodyLabel: UILabel!
     
+    
+    
+    var postId = ""
+    var postTitle = ""
+    var postBody = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +25,15 @@ class PostsViewController: UIViewController {
 
         let manager = ManagerData()
         
-//        let predicate = NSPredicate(format: "postId = %@", 1)
-        let posts = manager.getPostFromDB().filter("postId = \(postId)")
-        print("Here are all posts: \(posts)")
+        let post = manager.getPostFromDB().filter("postId = \(postId)")
+        
+        for value in post {
+            postTitle.append(value.postTitle)
+            postBody.append(value.postBody)
+        }
+        
+        postIdLabel.text = postId
+        postTitleLabel.text = postTitle
+        postBodyLabel.text = postBody
     }
 }
