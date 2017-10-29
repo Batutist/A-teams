@@ -32,7 +32,7 @@ class PostsViewController: UIViewController {
             postBody.append(value.postBody)
         }
         
-        postIdLabel.text = postId
+        postIdLabel.text = "Post ID: \(postId)"
         postTitleLabel.text = postTitle
         postBodyLabel.text = postBody
     }
