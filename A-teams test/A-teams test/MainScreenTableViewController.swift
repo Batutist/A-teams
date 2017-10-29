@@ -45,7 +45,7 @@ class MainScreenTableViewController: UITableViewController {
                 let postId = postIdTextfield.text
             }
         }
-         else if sender == commentsButton {
+        else if sender == commentsButton {
             let intCommentIdTextfield = Int(commentIdTextfield.text!)!
             
             if commentIdTextfield.text == "" || commentIdTextfield.text == nil {
@@ -90,7 +90,7 @@ class MainScreenTableViewController: UITableViewController {
                 wrongIdNumber()
             }else {
                 let toDoId = toDoIdTextfield.text
-//                print("\(toDoId!)")
+                //                print("\(toDoId!)")
                 
             }
         }
@@ -145,6 +145,11 @@ class MainScreenTableViewController: UITableViewController {
             if let postId = postIdTextfield.text {
                 let destinationViewController = segue.destination as! PostsViewController
                 destinationViewController.postId = postId
+            } else if segue.identifier == "commentsSegue" {
+                if let commentId = commentIdTextfield.text {
+                    let destinationViewController = segue.destination as! CommentsViewController
+                    destinationViewController.commentId = commentId
+                }
             }
         }
     }
