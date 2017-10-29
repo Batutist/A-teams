@@ -42,14 +42,7 @@ class MainScreenTableViewController: UITableViewController {
             else if intPostIdTextfield > 100 || intPostIdTextfield < 1 {
                 wrongIdNumber()
             } else {
-                func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                    if segue.identifier == "postsSegue" {
-                        if let postId = postIdTextfield.text {
-                            let destinationViewController = segue.destination as! PostsViewController
-                            destinationViewController.postId = postId
-                        }
-                    }
-                }
+                let postId = postIdTextfield.text
             }
         }
          else if sender == commentsButton {
@@ -57,7 +50,7 @@ class MainScreenTableViewController: UITableViewController {
             
             if commentIdTextfield.text == "" || commentIdTextfield.text == nil {
                 dontEnterIdNumber()
-            } else if intCommentIdTextfield < 1 || intCommentIdTextfield > 100 {
+            } else if intCommentIdTextfield < 1 || intCommentIdTextfield > 500 {
                 wrongIdNumber()
             } else {
                 let commentId = commentIdTextfield.text
@@ -69,7 +62,7 @@ class MainScreenTableViewController: UITableViewController {
             
             if userIdTextfield.text == "" || userIdTextfield.text == nil {
                 dontEnterIdNumber()
-            } else if intUserIdTextfield < 1 || intUserIdTextfield > 100 {
+            } else if intUserIdTextfield < 1 || intUserIdTextfield > 10 {
                 wrongIdNumber()
             } else {
                 let userId = userIdTextfield.text
@@ -81,7 +74,7 @@ class MainScreenTableViewController: UITableViewController {
             
             if photoIdTextfield.text == "" || photoIdTextfield.text == nil {
                 dontEnterIdNumber()
-            } else if intPhotoIdTextfield < 1 || intPhotoIdTextfield > 100 {
+            } else if intPhotoIdTextfield < 1 || intPhotoIdTextfield > 5000 {
                 wrongIdNumber()
             } else {
                 let photoId = photoIdTextfield.text
@@ -93,7 +86,7 @@ class MainScreenTableViewController: UITableViewController {
             
             if toDoIdTextfield.text == "" || toDoIdTextfield.text == nil {
                 dontEnterIdNumber()
-            } else if intToDoIdTextfield < 1 || intToDoIdTextfield > 100 {
+            } else if intToDoIdTextfield < 1 || intToDoIdTextfield > 200 {
                 wrongIdNumber()
             }else {
                 let toDoId = toDoIdTextfield.text
@@ -111,7 +104,7 @@ class MainScreenTableViewController: UITableViewController {
     }
     
     func wrongIdNumber() {
-        let alertController = UIAlertController(title: "Ошибка", message: "Вы ввели неверный номер ID. Введите цифру от 1 до 100.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Ошибка", message: "Вы ввели неверный номер ID.", preferredStyle: .alert)
         let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(OK)
         present(alertController, animated: true, completion: nil)
@@ -147,5 +140,12 @@ class MainScreenTableViewController: UITableViewController {
         
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "postsSegue" {
+            if let postId = postIdTextfield.text {
+                let destinationViewController = segue.destination as! PostsViewController
+                destinationViewController.postId = postId
+            }
+        }
+    }
 }

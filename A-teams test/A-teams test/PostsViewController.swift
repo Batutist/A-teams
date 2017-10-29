@@ -19,7 +19,7 @@ class PostsViewController: UIViewController {
         let manager = ManagerData()
         
 //        let predicate = NSPredicate(format: "postId = %@", 1)
-        let posts = manager.getPostFromDB().filter("postId = 5")
+        let posts = manager.getPostFromDB().filter("postId = \(postId)")
         print("Here are all posts: \(posts)")
     }
 }
