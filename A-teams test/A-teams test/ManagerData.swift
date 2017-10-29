@@ -11,6 +11,8 @@ import Alamofire
 import SwiftyJSON
 import RealmSwift
 
+let  userDefaults  =  UserDefaults.standard
+
 class ManagerData {
     
     func getPostFromDB() -> Results<Posts> {
@@ -78,6 +80,8 @@ class ManagerData {
                                 realm.add(post, update: true)
                             }
                         }
+                        userDefaults.set( "ok",  forKey:  "postsUrlLoad")
+                        
                     case .failure(let error):
                         print(error)
                     }
@@ -101,6 +105,8 @@ class ManagerData {
                                 realm.add(comment, update: true)
                             }
                         }
+                        userDefaults.set( "ok",  forKey:  "commentsUrlLoad")
+                        
                     case .failure(let error):
                         print(error)
                     }
@@ -133,6 +139,8 @@ class ManagerData {
                                 realm.add(user, update: true)
                             }
                         }
+                        userDefaults.set( "ok",  forKey:  "usersUrlLoad")
+                        
                     case .failure(let error):
                         print(error)
                     }
@@ -156,6 +164,8 @@ class ManagerData {
                                 realm.add(photo, update: true)
                             }
                         }
+                        userDefaults.set( "ok",  forKey:  "photosUrlLoad")
+                        
                     case .failure(let error):
                         print(error)
                     }
@@ -178,12 +188,13 @@ class ManagerData {
                                 realm.add(toDo, update: true)
                             }
                         }
+                        userDefaults.set( "ok",  forKey:  "toDosUrlLoad")
+                        
                     case .failure(let error):
                         print(error)
                     }
                 }
             }
         }
-        
     }
 }

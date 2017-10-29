@@ -120,7 +120,22 @@ class MainScreenTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        manager.loadJSON()
+        
+        if userDefaults.string(forKey:  "postsUrlLoad") == nil ||
+            userDefaults.string(forKey:  "commentsUrlLoad") == nil ||
+            userDefaults.string(forKey:  "usersUrlLoad") == nil ||
+            userDefaults.string(forKey:  "photosUrlLoad") == nil ||
+            userDefaults.string(forKey:  "toDosUrlLoad") == nil {
+            
+            manager.loadJSON()
+        } else {
+            manager.getCommentFromDB()
+            manager.getPhotoFromDB()
+            manager.getPostFromDB()
+            manager.getToDoFromDB()
+            manager.getUserFromDB()
+        }
+        
         
         postsImage.image = UIImage(named: "Posts")
         commentsImage.image = UIImage(named: "Comments")
