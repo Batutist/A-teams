@@ -6,7 +6,6 @@
 //  Copyright © 2017 Ковалев. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class CommentsViewController: UIViewController {
@@ -18,6 +17,7 @@ class CommentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         print("Look here \(commentId)")
         
         let manager = ManagerData()
@@ -30,5 +30,6 @@ class CommentsViewController: UIViewController {
             commentBody.append(value.commentBody)
             
         }
+        print("Id: \(commentId), name: \(commentName), Email: \(commentEmail), body: \(commentBody)")
     }
 }
