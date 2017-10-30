@@ -36,5 +36,10 @@ class CommentsViewController: UIViewController {
 
         }
         print("Id: \(commentId), name: \(commentName), Email: \(commentEmail), body: \(commentBody)")
+        commentIdLabel.text = "Comment ID: \(commentId)"
+        commentNameLable.text = commentName
+        commentEmailLabel.text = commentEmail
+        commentBodyLable.text = commentBody
+        
     }
 }
