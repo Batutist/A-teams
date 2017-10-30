@@ -9,6 +9,11 @@
 import UIKit
 
 class CommentsViewController: UIViewController {
+    @IBOutlet weak var commentIdLabel: UILabel!
+    @IBOutlet weak var commentNameLable: UILabel!
+    @IBOutlet weak var commentBodyLable: UILabel!
+    @IBOutlet weak var commentEmailLabel: UILabel!
+    
     
     var commentId = ""
     var commentName = ""
@@ -19,17 +24,17 @@ class CommentsViewController: UIViewController {
         super.viewDidLoad()
         
         print("Look here \(commentId)")
-//
-//        let manager = ManagerData()
-//
-//        let comment = manager.getCommentFromDB().filter("commentId = \(commentId)")
-//
-//        for value in comment {
-//            commentName.append(value.commentName)
-//            commentEmail.append(value.commentEmail)
-//            commentBody.append(value.commentBody)
-//
-//        }
-//        print("Id: \(commentId), name: \(commentName), Email: \(commentEmail), body: \(commentBody)")
+
+        let manager = ManagerData()
+
+        let comment = manager.getCommentFromDB().filter("commentId = \(commentId)")
+
+        for value in comment {
+            commentName.append(value.commentName)
+            commentEmail.append(value.commentEmail)
+            commentBody.append(value.commentBody)
+
+        }
+        print("Id: \(commentId), name: \(commentName), Email: \(commentEmail), body: \(commentBody)")
     }
 }
