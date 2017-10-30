@@ -145,12 +145,13 @@ class MainScreenTableViewController: UITableViewController {
             if let postId = postIdTextfield.text {
                 let destinationViewController = segue.destination as! PostsViewController
                 destinationViewController.postId = postId
-            } else if segue.identifier == "commentsSegue" {
-                if let commentId = commentIdTextfield.text {
-                    let destinationViewController = segue.destination as! CommentsViewController
-                    destinationViewController.commentId = commentId
-                }
+            }
+        } else if segue.identifier == "commentsSegue" {
+            if let commentId = commentIdTextfield.text {
+                let destinationViewController = segue.destination as! CommentsViewController
+                destinationViewController.commentId = commentId
             }
         }
+        
     }
 }
