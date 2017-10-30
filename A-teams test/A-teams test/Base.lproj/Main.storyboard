@@ -274,10 +274,10 @@
             </objects>
             <point key="canvasLocation" x="-546" y="-607"/>
         </scene>
-        <!--View Controller-->
+        <!--Users View Controller-->
         <scene sceneID="Vx2-Re-Jys">
             <objects>
-                <viewController id="tWn-yy-wux" sceneMemberID="viewController">
+                <viewController id="tWn-yy-wux" customClass="UsersViewController" customModule="A_teams_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DKF-tJ-1Kr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
