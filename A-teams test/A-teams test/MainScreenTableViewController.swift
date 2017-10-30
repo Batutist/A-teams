@@ -30,6 +30,12 @@ class MainScreenTableViewController: UITableViewController {
     @IBOutlet weak var photosButton: UIButton!
     @IBOutlet weak var toDosButton: UIButton!
     
+    @IBOutlet weak var userOneInformationLabel: UILabel!
+    @IBOutlet weak var userTwoInformationLabel: UILabel!
+    @IBOutlet weak var userThreeInformationLabel: UILabel!
+    @IBOutlet weak var userFourInformationLabel: UILabel!
+    @IBOutlet weak var userFiveInformationLabel: UILabel!
+    
     
     
     @IBAction func buttonPressed(_ sender: UIButton) {
