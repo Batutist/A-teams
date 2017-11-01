@@ -142,6 +142,7 @@ class MainScreenTableViewController: UITableViewController {
             userDefaults.string(forKey:  "toDosUrlLoad") == nil {
             
             manager.loadJSON()
+            
         } else {
             manager.getCommentFromDB()
             manager.getPhotoFromDB()
@@ -163,13 +164,17 @@ class MainScreenTableViewController: UITableViewController {
         let userFourIdRandom = Int.randomUser(range: 1..<11)
         let userFiveIdRandom = Int.randomUser(range: 1..<11)
         
-        userOneInformationLabel.text = String(userOneIdRandom)
         userTwoInformationLabel.text = String(userTwoIdRandom)
         userThreeInformationLabel.text = String(userThreeIdRandom)
         userFourInformationLabel.text = String(userFourIdRandom)
         userFiveInformationLabel.text = String(userFiveIdRandom)
         
         let userOneRandom = manager.getUserFromDB().filter("userId = \(userOneIdRandom)")
+        for value in userOneRandom {
+            let userName = value.userName
+            userOneInformationLabel.text = String(userName)
+            
+        }
         let userTwoRandom = manager.getUserFromDB().filter("userId = \(userTwoIdRandom)")
         let userThreeRandom = manager.getUserFromDB().filter("userId = \(userThreeIdRandom)")
         let userFourRandom = manager.getUserFromDB().filter("userId = \(userFourIdRandom)")
