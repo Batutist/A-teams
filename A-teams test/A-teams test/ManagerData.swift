@@ -56,6 +56,7 @@ class ManagerData {
         let photosUrl = "https://jsonplaceholder.typicode.com/photos"
         let toDosUrl = "https://jsonplaceholder.typicode.com/todos"
         
+        
         let urlArray = [postsUrl, commentsUrl, usersUrl, photosUrl, toDosUrl]
         
         for url in urlArray {

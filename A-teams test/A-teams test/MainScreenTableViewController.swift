@@ -169,9 +169,15 @@ class MainScreenTableViewController: UITableViewController {
         userFourInformationLabel.text = String(userFourIdRandom)
         userFiveInformationLabel.text = String(userFiveIdRandom)
         
+        let userOneRandom = manager.getUserFromDB().filter("userId = \(userOneIdRandom)")
+        let userTwoRandom = manager.getUserFromDB().filter("userId = \(userTwoIdRandom)")
+        let userThreeRandom = manager.getUserFromDB().filter("userId = \(userThreeIdRandom)")
+        let userFourRandom = manager.getUserFromDB().filter("userId = \(userFourIdRandom)")
+        let userFiveRandom = manager.getUserFromDB().filter("userId = \(userFiveIdRandom)")
         
         
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "postsSegue" {
