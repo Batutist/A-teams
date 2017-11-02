@@ -9,20 +9,7 @@
 import Foundation
 import UIKit
 
-extension Int {
-    static func randomUser(range: Range<Int> ) -> Int {
-        var offset = 0
-        
-        if range.lowerBound < 0   {
-            offset = abs(range.lowerBound)
-        }
-        
-        let min = UInt32(range.lowerBound + offset)
-        let max = UInt32(range.upperBound + offset)
-        
-        return Int(min + arc4random_uniform(max - min)) - offset
-    }
-}
+
 
 class MainScreenTableViewController: UITableViewController {
     let manager = ManagerData()
@@ -158,11 +145,11 @@ class MainScreenTableViewController: UITableViewController {
         photosImage.image = UIImage(named: "Photos")
         toDosImage.image = UIImage(named: "ToDos")
         
-        let userOneIdRandom = Int.randomUser(range: 1..<11)
-        let userTwoIdRandom = Int.randomUser(range: 1..<11)
-        let userThreeIdRandom = Int.randomUser(range: 1..<11)
-        let userFourIdRandom = Int.randomUser(range: 1..<11)
-        let userFiveIdRandom = Int.randomUser(range: 1..<11)
+        let userOneIdRandom = Int.randomId(range: 1..<11)
+        let userTwoIdRandom = Int.randomId(range: 1..<11)
+        let userThreeIdRandom = Int.randomId(range: 1..<11)
+        let userFourIdRandom = Int.randomId(range: 1..<11)
+        let userFiveIdRandom = Int.randomId(range: 1..<11)
         
         userTwoInformationLabel.text = String(userTwoIdRandom)
         userThreeInformationLabel.text = String(userThreeIdRandom)

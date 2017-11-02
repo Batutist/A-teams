@@ -19,6 +19,7 @@
 		7D6381701F98ACE8008CAAE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63816F1F98ACE8008CAAE1 /* AppDelegate.swift */; };
 		7D6381751F98ACE8008CAAE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D6381731F98ACE8008CAAE1 /* Main.storyboard */; };
 		7D63817A1F98ACE8008CAAE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D6381781F98ACE8008CAAE1 /* LaunchScreen.storyboard */; };
+		7D7EADFA1FABBEEB007682C8 /* RandomId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EADF91FABBEEB007682C8 /* RandomId.swift */; };
 		7DA2B9551F9E8C36004F3F2C /* MainScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2B9541F9E8C36004F3F2C /* MainScreenTableViewController.swift */; };
 		7DA7FE091FA347FF008AFDEB /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA7FE081FA347FF008AFDEB /* PostsViewController.swift */; };
 		7DB77AF71F9F53A700F6BE43 /* ManagerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB77AF61F9F53A700F6BE43 /* ManagerData.swift */; };
@@ -39,6 +40,7 @@
 		7D6381741F98ACE8008CAAE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D6381791F98ACE8008CAAE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D63817B1F98ACE8008CAAE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D7EADF91FABBEEB007682C8 /* RandomId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomId.swift; sourceTree = "<group>"; };
 		7DA2B9541F9E8C36004F3F2C /* MainScreenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTableViewController.swift; sourceTree = "<group>"; };
 		7DA7FE081FA347FF008AFDEB /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		7DB77AF61F9F53A700F6BE43 /* ManagerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerData.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				7D487DF21FA73CA90035BC45 /* UsersViewController.swift */,
 				7D12F87C1FA32E630000BA24 /* Realm files */,
 				7DA2B9541F9E8C36004F3F2C /* MainScreenTableViewController.swift */,
+				7D7EADF91FABBEEB007682C8 /* RandomId.swift */,
 				7DB77AF81F9F5BAE00F6BE43 /* Assets.xcassets */,
 				7D6381781F98ACE8008CAAE1 /* LaunchScreen.storyboard */,
 				7D63817B1F98ACE8008CAAE1 /* Info.plist */,
@@ -312,6 +315,7 @@
 				7D12F8731FA32E020000BA24 /* Posts.swift in Sources */,
 				7D12F8791FA32E280000BA24 /* Photos.swift in Sources */,
 				7D22FD461FA680C600D9854D /* CommentsViewController.swift in Sources */,
+				7D7EADFA1FABBEEB007682C8 /* RandomId.swift in Sources */,
 				7D12F87B1FA32E310000BA24 /* ToDos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
