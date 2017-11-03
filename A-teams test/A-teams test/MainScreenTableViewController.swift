@@ -141,16 +141,16 @@ class MainScreenTableViewController: UITableViewController {
        
         
         let userOneRandom = manager.getUserFromDB().filter("userId = \(userOneIdRandom)")
-        userFiveInformationLabel.text = Display().infoOf(user: userOneRandom)
+        userOneInformationLabel.text = Display().infoOf(user: userOneRandom)
         
         let userTwoRandom = manager.getUserFromDB().filter("userId = \(userTwoIdRandom)")
-        userFiveInformationLabel.text = Display().infoOf(user: userTwoRandom)
+        userTwoInformationLabel.text = Display().infoOf(user: userTwoRandom)
         
         let userThreeRandom = manager.getUserFromDB().filter("userId = \(userThreeIdRandom)")
-        userFiveInformationLabel.text = Display().infoOf(user: userThreeRandom)
+        userThreeInformationLabel.text = Display().infoOf(user: userThreeRandom)
         
         let userFourRandom = manager.getUserFromDB().filter("userId = \(userFourIdRandom)")
-        userFiveInformationLabel.text = Display().infoOf(user: userFourRandom)
+        userFourInformationLabel.text = Display().infoOf(user: userFourRandom)
         
         let userFiveRandom = manager.getUserFromDB().filter("userId = \(userFiveIdRandom)")
         userFiveInformationLabel.text = Display().infoOf(user: userFiveRandom)
