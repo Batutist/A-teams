@@ -21,17 +21,17 @@ class PostsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Look here \(postId)")
-
+        // create ManagerData object
         let manager = ManagerData()
         
+        // get post by postId from dataBase
         let post = manager.getPostFromDB().filter("postId = \(postId)")
         
         for value in post {
             postTitle.append(value.postTitle)
             postBody.append(value.postBody)
         }
-        
+        // display post information in PostsViewController
         postIdLabel.text = "Post ID: \(postId)"
         postTitleLabel.text = postTitle
         postBodyLabel.text = postBody

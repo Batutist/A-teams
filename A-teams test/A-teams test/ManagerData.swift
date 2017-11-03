@@ -15,54 +15,27 @@ let  userDefaults  =  UserDefaults.standard
 
 class ManagerData {
     
-    func getPostFromDB() -> Results<Posts> {
-        let realm = try! Realm()
-        let post = realm.objects(Posts.self)
-        return post
-    }
-    
-    func getCommentFromDB() -> Results<Comments> {
-        let realm = try! Realm()
-        let comment = realm.objects(Comments.self)
-        return comment
-    }
-    
-    func getUserFromDB() -> Results<Users> {
-        let realm = try! Realm()
-        let user = realm.objects(Users.self)
-        return user
-    }
-    
-    func getPhotoFromDB() -> Results<Photos> {
-        let realm = try! Realm()
-        let photo = realm.objects(Photos.self)
-        return photo
-    }
-    
-    func getToDoFromDB() -> Results<ToDos> {
-        let realm = try! Realm()
-        let toDo = realm.objects(ToDos.self)
-        return toDo
-    }
+
     
     func loadJSON() {
-        print("Путь к файлам \(Realm.Configuration.defaultConfiguration.fileURL)")
-        
+        print("Путь к файлам \(String(describing: Realm.Configuration.defaultConfiguration.fileURL))")
+        // create Realm object
         let realm = try! Realm()
-        
+        // urls for use in API request
         let postsUrl = "https://jsonplaceholder.typicode.com/posts"
         let commentsUrl = "https://jsonplaceholder.typicode.com/comments"
         let usersUrl = "https://jsonplaceholder.typicode.com/users"
         let photosUrl = "https://jsonplaceholder.typicode.com/photos"
         let toDosUrl = "https://jsonplaceholder.typicode.com/todos"
         
-        
+        // urls array
         let urlArray = [postsUrl, commentsUrl, usersUrl, photosUrl, toDosUrl]
         
         for url in urlArray {
             let url = url
             //запрос JSON
             Alamofire.request(url, method: .get).validate().responseJSON { response in
+                //switch by url
                 //перебираем по url
                 if url == postsUrl {
                     switch response.result {
@@ -76,13 +49,14 @@ class ManagerData {
                             post.postTitle = subJson["title"].stringValue
                             post.postBody = subJson["body"].stringValue
                             
+                            // Try to write posts into data base
                             //пробуем записать в базу пост
                             try! realm.write {
                                 realm.add(post, update: true)
                             }
                         }
                         userDefaults.set( "ok",  forKey:  "postsUrlLoad")
-                        
+                       // if can't write print error
                     case .failure(let error):
                         print(error)
                     }
@@ -101,6 +75,7 @@ class ManagerData {
                             comment.commentEmail = subJson["email"].stringValue
                             comment.commentBody = subJson["body"].stringValue
                             
+                            // Try to write comments into data base
                             //пробуем записать в базу комментарии
                             try! realm.write {
                                 realm.add(comment, update: true)
@@ -135,6 +110,7 @@ class ManagerData {
                             user.userCompanyName = subJson["company"]["name"].stringValue
                             user.userCompanyCatchPhrase = subJson["company"]["catchPhrase"].stringValue
                             
+                            // Try to write users into data base
                             //пробуем записать в базу пользователей
                             try! realm.write {
                                 realm.add(user, update: true)
@@ -160,6 +136,7 @@ class ManagerData {
                             photo.photoURL = subJson["url"].stringValue
                             photo.thumbnailUrl = subJson["thumbnailUrl"].stringValue
                             
+                            // Try to write photos into data base
                             //пробуем записать в базу фотографии
                             try! realm.write {
                                 realm.add(photo, update: true)
@@ -184,6 +161,7 @@ class ManagerData {
                             toDo.toDoTitle = subJson["title"].stringValue
                             toDo.completed = subJson["completed"].boolValue
                             
+                            // Try to write toDos into data base
                             //пробуем записать в базу лист задач
                             try! realm.write {
                                 realm.add(toDo, update: true)
@@ -197,5 +175,36 @@ class ManagerData {
                 }
             }
         }
+    }
+    //functions to get data from dataBase (posts, comments, users, photos, toDos)
+    
+    func getPostFromDB() -> Results<Posts> {
+        let realm = try! Realm()
+        let post = realm.objects(Posts.self)
+        return post
+    }
+    
+    func getCommentFromDB() -> Results<Comments> {
+        let realm = try! Realm()
+        let comment = realm.objects(Comments.self)
+        return comment
+    }
+    
+    func getUserFromDB() -> Results<Users> {
+        let realm = try! Realm()
+        let user = realm.objects(Users.self)
+        return user
+    }
+    
+    func getPhotoFromDB() -> Results<Photos> {
+        let realm = try! Realm()
+        let photo = realm.objects(Photos.self)
+        return photo
+    }
+    
+    func getToDoFromDB() -> Results<ToDos> {
+        let realm = try! Realm()
+        let toDo = realm.objects(ToDos.self)
+        return toDo
     }
 }

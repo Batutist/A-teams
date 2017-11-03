@@ -13,6 +13,7 @@ import RealmSwift
 
 
 class MainScreenTableViewController: UITableViewController {
+    //create object of ManagerData class
     let manager = ManagerData()
     
     @IBOutlet weak var postIdTextfield: UITextField!
@@ -42,16 +43,18 @@ class MainScreenTableViewController: UITableViewController {
     
     
     
+    // check textFields for unfilledness, and on right value
+    // проветка текстового поля на пустую строку и правильно введенное значение
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         if sender == postsButton {
             let intPostIdTextfield = Int(postIdTextfield.text!)!
             
             if postIdTextfield.text == "" || postIdTextfield.text == nil {
-                dontEnterIdNumber()
+                dontEnterIdNumber()             /* func with alertController */
             }
             else if intPostIdTextfield > 100 || intPostIdTextfield < 1 {
-                wrongIdNumber()
+                wrongIdNumber()                 /* func with alertController */
             } else {
                 let postId = postIdTextfield.text
             }
@@ -110,37 +113,28 @@ class MainScreenTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // load images to MainScreenTableViewController
         postsImage.image = UIImage(named: "Posts")
         commentsImage.image = UIImage(named: "Comments")
         usersImage.image = UIImage(named: "Users")
         photosImage.image = UIImage(named: "Photos")
         toDosImage.image = UIImage(named: "ToDos")
         
-        if userDefaults.string(forKey:  "postsUrlLoad") == nil ||
-            userDefaults.string(forKey:  "commentsUrlLoad") == nil ||
-            userDefaults.string(forKey:  "usersUrlLoad") == nil ||
-            userDefaults.string(forKey:  "photosUrlLoad") == nil ||
-            userDefaults.string(forKey:  "toDosUrlLoad") == nil {
-            
-            manager.loadJSON()
-            manager.getUserFromDB()
-            
-        } else {
-            manager.getCommentFromDB()
-            manager.getPhotoFromDB()
-            manager.getPostFromDB()
-            manager.getToDoFromDB()
-            manager.getUserFromDB()
-        }
+        //load JSON and save to DataBase
+        manager.loadJSON()
+        //
+
         
+        // Create random users ID
         let userOneIdRandom = Int.randomId(range: 1..<11)
         let userTwoIdRandom = Int.randomId(range: 1..<11)
         let userThreeIdRandom = Int.randomId(range: 1..<11)
         let userFourIdRandom = Int.randomId(range: 1..<11)
         let userFiveIdRandom = Int.randomId(range: 1..<11)
-       
         
+        // Create and display in UserInformationLabels five random users
         let userOneRandom = manager.getUserFromDB().filter("userId = \(userOneIdRandom)")
+        // Use class Display with func infoOf(user) to display short information about random user in MainScreenTableViewController
         userOneInformationLabel.text = Display().infoOf(user: userOneRandom)
         
         let userTwoRandom = manager.getUserFromDB().filter("userId = \(userTwoIdRandom)")
@@ -157,14 +151,14 @@ class MainScreenTableViewController: UITableViewController {
     }
     
     
-    
+    //func with alertController to show alert if ***IdTextField is empty
     func dontEnterIdNumber() {
         let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели ID.", preferredStyle: .alert)
         let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(OK)
         present(alertController, animated: true, completion: nil)
     }
-    
+    //func with alertController to show alert if ***IdTextField has wrong id number
     func wrongIdNumber() {
         let alertController = UIAlertController(title: "Ошибка", message: "Вы ввели неверный номер ID.", preferredStyle: .alert)
         let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -172,7 +166,7 @@ class MainScreenTableViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    
+    // func prepare for segue to transfer Id (post, comment, user, toDo, photo) value to their ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "postsSegue" {
             if let postId = postIdTextfield.text {
@@ -188,3 +182,18 @@ class MainScreenTableViewController: UITableViewController {
         
     }
 }
+
+//        if userDefaults.string(forKey:  "postsUrlLoad") == nil ||
+//            userDefaults.string(forKey:  "commentsUrlLoad") == nil ||
+//            userDefaults.string(forKey:  "usersUrlLoad") == nil ||
+//            userDefaults.string(forKey:  "photosUrlLoad") == nil ||
+//            userDefaults.string(forKey:  "toDosUrlLoad") == nil {
+//
+//
+//        } else {
+//            manager.getCommentFromDB()
+//            manager.getPhotoFromDB()
+//            manager.getPostFromDB()
+//            manager.getToDoFromDB()
+//            manager.getUserFromDB()
+//        }
