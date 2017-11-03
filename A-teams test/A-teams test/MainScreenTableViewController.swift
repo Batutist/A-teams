@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 
 
@@ -137,31 +138,25 @@ class MainScreenTableViewController: UITableViewController {
         let userThreeIdRandom = Int.randomId(range: 1..<11)
         let userFourIdRandom = Int.randomId(range: 1..<11)
         let userFiveIdRandom = Int.randomId(range: 1..<11)
-        
-//        userTwoInformationLabel.text = String(userTwoIdRandom)
-//        userThreeInformationLabel.text = String(userThreeIdRandom)
-//        userFourInformationLabel.text = String(userFourIdRandom)
-//        userFiveInformationLabel.text = String(userFiveIdRandom)
+       
         
         let userOneRandom = manager.getUserFromDB().filter("userId = \(userOneIdRandom)")
-          for value in userOneRandom {
-            let userName = value.userName
-            let userEmail = value.userEmail
-            let userCity = value.userCity
-            let userPhone = value.userPhone
-
-            userOneInformationLabel.text = String("Name is: \(userName), user Email is: \(userEmail), he(she) lives in: \(userCity), and tel: \(userPhone)")
-        }
+        userFiveInformationLabel.text = Display().infoOf(user: userOneRandom)
         
         let userTwoRandom = manager.getUserFromDB().filter("userId = \(userTwoIdRandom)")
+        userFiveInformationLabel.text = Display().infoOf(user: userTwoRandom)
+        
         let userThreeRandom = manager.getUserFromDB().filter("userId = \(userThreeIdRandom)")
+        userFiveInformationLabel.text = Display().infoOf(user: userThreeRandom)
+        
         let userFourRandom = manager.getUserFromDB().filter("userId = \(userFourIdRandom)")
+        userFiveInformationLabel.text = Display().infoOf(user: userFourRandom)
+        
         let userFiveRandom = manager.getUserFromDB().filter("userId = \(userFiveIdRandom)")
-        
-        
+        userFiveInformationLabel.text = Display().infoOf(user: userFiveRandom)
     }
     
-
+    
     
     func dontEnterIdNumber() {
         let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели ID.", preferredStyle: .alert)
