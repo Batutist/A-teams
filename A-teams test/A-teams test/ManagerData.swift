@@ -13,10 +13,11 @@ import RealmSwift
 
 let  userDefaults  =  UserDefaults.standard
 
+//class with methods to get and save to DB information from https://jsonplaceholder.typicode.com
 class ManagerData {
     
 
-    
+    // func with requst by url and saving data to DB
     func loadJSON() {
         print("Путь к файлам \(String(describing: Realm.Configuration.defaultConfiguration.fileURL))")
         // create Realm object
