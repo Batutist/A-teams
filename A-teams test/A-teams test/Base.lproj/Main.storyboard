@@ -69,7 +69,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.47450980539999998" green="0.8392156959" blue="0.97647058959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.60144799882472655" green="0.8359197214719184" blue="0.97647058959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sMo-gp-8ns" secondAttribute="trailing" constant="20" symbolic="YES" id="5TQ-Vg-r6k"/>
                             <constraint firstItem="sMo-gp-8ns" firstAttribute="leading" secondItem="VQr-TP-jRt" secondAttribute="leading" constant="16" id="Aqh-2R-hit"/>
@@ -219,7 +219,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.92549020049999997" green="0.23529411850000001" blue="0.1019607857" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92549020049999997" green="0.56941900068744111" blue="0.3965057183662733" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="shv-ef-hWF" firstAttribute="leading" secondItem="SCn-Dv-xpT" secondAttribute="leading" id="0KJ-C5-6KH"/>
                             <constraint firstItem="OyP-Of-x3C" firstAttribute="top" secondItem="91O-vV-tFp" secondAttribute="top" constant="64" id="1Bt-dE-QM9"/>
@@ -295,7 +295,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.00094327928320000001" green="0.75546388090000005" blue="0.001463444859" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.52874472027483344" green="0.75546388090000005" blue="0.54812727020333429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="JM5-5m-8AI"/>
                     </view>
                 </viewController>
@@ -319,7 +319,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.7772123795680469" green="0.77615272236043087" blue="0.79466229433212443" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="gAk-b0-zA2"/>
                     </view>
                 </viewController>
@@ -343,7 +343,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.1411764771" green="0.3960784376" blue="0.5647059083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.81547501451761661" green="0.69964733334071139" blue="0.44031855180393203" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="MKy-Yo-RnG"/>
                     </view>
                 </viewController>
