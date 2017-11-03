@@ -40,6 +40,8 @@ class MainScreenTableViewController: UITableViewController {
     
     
     
+    
+    
     @IBAction func buttonPressed(_ sender: UIButton) {
         if sender == postsButton {
             let intPostIdTextfield = Int(postIdTextfield.text!)!
@@ -104,6 +106,63 @@ class MainScreenTableViewController: UITableViewController {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        postsImage.image = UIImage(named: "Posts")
+        commentsImage.image = UIImage(named: "Comments")
+        usersImage.image = UIImage(named: "Users")
+        photosImage.image = UIImage(named: "Photos")
+        toDosImage.image = UIImage(named: "ToDos")
+        
+        if userDefaults.string(forKey:  "postsUrlLoad") == nil ||
+            userDefaults.string(forKey:  "commentsUrlLoad") == nil ||
+            userDefaults.string(forKey:  "usersUrlLoad") == nil ||
+            userDefaults.string(forKey:  "photosUrlLoad") == nil ||
+            userDefaults.string(forKey:  "toDosUrlLoad") == nil {
+            
+            manager.loadJSON()
+            manager.getUserFromDB()
+            
+        } else {
+            manager.getCommentFromDB()
+            manager.getPhotoFromDB()
+            manager.getPostFromDB()
+            manager.getToDoFromDB()
+            manager.getUserFromDB()
+        }
+        
+        let userOneIdRandom = Int.randomId(range: 1..<11)
+        let userTwoIdRandom = Int.randomId(range: 1..<11)
+        let userThreeIdRandom = Int.randomId(range: 1..<11)
+        let userFourIdRandom = Int.randomId(range: 1..<11)
+        let userFiveIdRandom = Int.randomId(range: 1..<11)
+        
+//        userTwoInformationLabel.text = String(userTwoIdRandom)
+//        userThreeInformationLabel.text = String(userThreeIdRandom)
+//        userFourInformationLabel.text = String(userFourIdRandom)
+//        userFiveInformationLabel.text = String(userFiveIdRandom)
+        
+        let userOneRandom = manager.getUserFromDB().filter("userId = \(userOneIdRandom)")
+          for value in userOneRandom {
+            let userName = value.userName
+            let userEmail = value.userEmail
+            let userCity = value.userCity
+            let userPhone = value.userPhone
+
+            userOneInformationLabel.text = String("Name is: \(userName), user Email is: \(userEmail), he(she) lives in: \(userCity), and tel: \(userPhone)")
+        }
+        
+        let userTwoRandom = manager.getUserFromDB().filter("userId = \(userTwoIdRandom)")
+        let userThreeRandom = manager.getUserFromDB().filter("userId = \(userThreeIdRandom)")
+        let userFourRandom = manager.getUserFromDB().filter("userId = \(userFourIdRandom)")
+        let userFiveRandom = manager.getUserFromDB().filter("userId = \(userFiveIdRandom)")
+        
+        
+    }
+    
+
+    
     func dontEnterIdNumber() {
         let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели ID.", preferredStyle: .alert)
         let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -116,58 +175,6 @@ class MainScreenTableViewController: UITableViewController {
         let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(OK)
         present(alertController, animated: true, completion: nil)
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        if userDefaults.string(forKey:  "postsUrlLoad") == nil ||
-            userDefaults.string(forKey:  "commentsUrlLoad") == nil ||
-            userDefaults.string(forKey:  "usersUrlLoad") == nil ||
-            userDefaults.string(forKey:  "photosUrlLoad") == nil ||
-            userDefaults.string(forKey:  "toDosUrlLoad") == nil {
-            
-            manager.loadJSON()
-            
-        } else {
-            manager.getCommentFromDB()
-            manager.getPhotoFromDB()
-            manager.getPostFromDB()
-            manager.getToDoFromDB()
-            manager.getUserFromDB()
-        }
-        
-        
-        postsImage.image = UIImage(named: "Posts")
-        commentsImage.image = UIImage(named: "Comments")
-        usersImage.image = UIImage(named: "Users")
-        photosImage.image = UIImage(named: "Photos")
-        toDosImage.image = UIImage(named: "ToDos")
-        
-        let userOneIdRandom = Int.randomId(range: 1..<11)
-        let userTwoIdRandom = Int.randomId(range: 1..<11)
-        let userThreeIdRandom = Int.randomId(range: 1..<11)
-        let userFourIdRandom = Int.randomId(range: 1..<11)
-        let userFiveIdRandom = Int.randomId(range: 1..<11)
-        
-        userTwoInformationLabel.text = String(userTwoIdRandom)
-        userThreeInformationLabel.text = String(userThreeIdRandom)
-        userFourInformationLabel.text = String(userFourIdRandom)
-        userFiveInformationLabel.text = String(userFiveIdRandom)
-        
-        let userOneRandom = manager.getUserFromDB().filter("userId = \(userOneIdRandom)")
-        for value in userOneRandom {
-            let userName = value.userName
-            userOneInformationLabel.text = String(userName)
-            
-        }
-        let userTwoRandom = manager.getUserFromDB().filter("userId = \(userTwoIdRandom)")
-        let userThreeRandom = manager.getUserFromDB().filter("userId = \(userThreeIdRandom)")
-        let userFourRandom = manager.getUserFromDB().filter("userId = \(userFourIdRandom)")
-        let userFiveRandom = manager.getUserFromDB().filter("userId = \(userFiveIdRandom)")
-        
-        
     }
     
     
