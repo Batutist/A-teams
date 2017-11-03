@@ -8,6 +8,8 @@
 
 import Foundation
 
+// extension with func to create random Id from range
+// расширение с функцией для создания рандомного Id из заданного диапазона
 extension Int {
     static func randomId(range: Range<Int> ) -> Int {
         var offset = 0

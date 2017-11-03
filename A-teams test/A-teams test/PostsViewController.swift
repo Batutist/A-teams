@@ -22,9 +22,11 @@ class PostsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // create ManagerData object
+        // создаем оъект класса ManagerData
         let manager = ManagerData()
         
         // get post by postId from dataBase
+        // получаем пост из БД по ID
         let post = manager.getPostFromDB().filter("postId = \(postId)")
         
         for value in post {
@@ -32,6 +34,7 @@ class PostsViewController: UIViewController {
             postBody.append(value.postBody)
         }
         // display post information in PostsViewController
+        // отображаем post информацию в PostsViewController
         postIdLabel.text = "Post ID: \(postId)"
         postTitleLabel.text = postTitle
         postBodyLabel.text = postBody

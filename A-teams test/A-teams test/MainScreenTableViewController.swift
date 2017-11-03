@@ -14,6 +14,7 @@ import RealmSwift
 
 class MainScreenTableViewController: UITableViewController {
     //create object of ManagerData class
+    //создаем объект класса ManagerData
     let manager = ManagerData()
     
     @IBOutlet weak var postIdTextfield: UITextField!
@@ -43,7 +44,7 @@ class MainScreenTableViewController: UITableViewController {
     
     
     
-    // check textFields for unfilledness, and on right value
+    // check textFields on validation
     // проветка текстового поля на пустую строку и правильно введенное значение
     
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -114,6 +115,7 @@ class MainScreenTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // load images to MainScreenTableViewController
+        // загружаем иконки в интерфейс
         postsImage.image = UIImage(named: "Posts")
         commentsImage.image = UIImage(named: "Comments")
         usersImage.image = UIImage(named: "Users")
@@ -121,11 +123,13 @@ class MainScreenTableViewController: UITableViewController {
         toDosImage.image = UIImage(named: "ToDos")
         
         //load JSON and save to DataBase
+        //загружаем данные JSON и сохраняем в базу данных
         manager.loadJSON()
         //
 
         
         // Create random users ID
+        //Создаем ID случайного пользователя
         let userOneIdRandom = Int.randomId(range: 1..<11)
         let userTwoIdRandom = Int.randomId(range: 1..<11)
         let userThreeIdRandom = Int.randomId(range: 1..<11)
@@ -133,8 +137,10 @@ class MainScreenTableViewController: UITableViewController {
         let userFiveIdRandom = Int.randomId(range: 1..<11)
         
         // Create and display in UserInformationLabels five random users
+        // Создаем и отображаем в UserInformationLabels 5 случайных пользователей
         let userOneRandom = manager.getUserFromDB().filter("userId = \(userOneIdRandom)")
         // Use class Display with func infoOf(user) to display short information about random user in MainScreenTableViewController
+        // Использую класс Display с функцией infoOf(user) чтобы отобразить информацию о случайном пользователе в интерфейсе MainScreenTableViewController
         userOneInformationLabel.text = Display().infoOf(user: userOneRandom)
         
         let userTwoRandom = manager.getUserFromDB().filter("userId = \(userTwoIdRandom)")
@@ -152,6 +158,7 @@ class MainScreenTableViewController: UITableViewController {
     
     
     //func with alertController to show alert if ***IdTextField is empty
+    //Функция с alertController для отображения сообщения если ***IdTextField не заполнено
     func dontEnterIdNumber() {
         let alertController = UIAlertController(title: "Ошибка", message: "Вы не ввели ID.", preferredStyle: .alert)
         let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -159,6 +166,7 @@ class MainScreenTableViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
     }
     //func with alertController to show alert if ***IdTextField has wrong id number
+    //Функция с alertController для отображения сообщения если в ***IdTextField введен неверный номер ID
     func wrongIdNumber() {
         let alertController = UIAlertController(title: "Ошибка", message: "Вы ввели неверный номер ID.", preferredStyle: .alert)
         let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -167,6 +175,7 @@ class MainScreenTableViewController: UITableViewController {
     }
     
     // func prepare for segue to transfer Id (post, comment, user, toDo, photo) value to their ViewControllers
+    // Функция prepare for segue для передачи значения ID в их (post, comment, user, toDo, photo) ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "postsSegue" {
             if let postId = postIdTextfield.text {

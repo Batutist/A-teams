@@ -6,12 +6,14 @@
 //  Copyright © 2017 Ковалев. All rights reserved.
 //
 
-//попытка сделать общую функцию для отображения информации пользователей в MainScreenTableViewController
+
 
 import Foundation
 import UIKit
 import RealmSwift
 
+// template class with func, takes random user and return String value with user information
+// шаблонный класс с функцией принимающей случайного пользователя и возвращающей String значение с информацией о пользователе в удобной форме
 class Display {
     
     func infoOf(user: Results<Users>) -> String {

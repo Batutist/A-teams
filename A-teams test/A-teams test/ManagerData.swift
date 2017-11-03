@@ -14,15 +14,19 @@ import RealmSwift
 let  userDefaults  =  UserDefaults.standard
 
 //class with methods to get and save to DB information from https://jsonplaceholder.typicode.com
+//класс с методами для получения информации из https://jsonplaceholder.typicode.com и дальнейшего сохранения в базу данных
 class ManagerData {
     
 
     // func with requst by url and saving data to DB
+    //функция с запросом по url и сохранением в БД
     func loadJSON() {
         print("Путь к файлам \(String(describing: Realm.Configuration.defaultConfiguration.fileURL))")
         // create Realm object
+        // создаем обьект Realm
         let realm = try! Realm()
         // urls for use in API request
+        // адреса для использования в API запросах
         let postsUrl = "https://jsonplaceholder.typicode.com/posts"
         let commentsUrl = "https://jsonplaceholder.typicode.com/comments"
         let usersUrl = "https://jsonplaceholder.typicode.com/users"
@@ -30,10 +34,12 @@ class ManagerData {
         let toDosUrl = "https://jsonplaceholder.typicode.com/todos"
         
         // urls array
+        // массив адресов
         let urlArray = [postsUrl, commentsUrl, usersUrl, photosUrl, toDosUrl]
         
         for url in urlArray {
             let url = url
+            //JSON request
             //запрос JSON
             Alamofire.request(url, method: .get).validate().responseJSON { response in
                 //switch by url
@@ -57,7 +63,8 @@ class ManagerData {
                             }
                         }
                         userDefaults.set( "ok",  forKey:  "postsUrlLoad")
-                       // if can't write print error
+                        // if can't write print error
+                        // в случае неудачи печатаем ошибку
                     case .failure(let error):
                         print(error)
                     }
@@ -178,7 +185,7 @@ class ManagerData {
         }
     }
     //functions to get data from dataBase (posts, comments, users, photos, toDos)
-    
+    //функция для получения данных из БД (posts, comments, users, photos, toDos)
     func getPostFromDB() -> Results<Posts> {
         let realm = try! Realm()
         let post = realm.objects(Posts.self)

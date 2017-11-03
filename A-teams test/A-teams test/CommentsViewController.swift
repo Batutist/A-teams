@@ -23,8 +23,10 @@ class CommentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // create ManagerData object
+        // создаем объект класса ManagerData
         let manager = ManagerData()
         // get comment from DB by commentId
+        // получаем комментарий из БД по ID
         let comment = manager.getCommentFromDB().filter("commentId = \(commentId)")
 
         for value in comment {
@@ -33,7 +35,8 @@ class CommentsViewController: UIViewController {
             commentBody.append(value.commentBody)
 
         }
-        // display comment information if CommentsViewController
+        // display comment information in CommentsViewController
+        // отображаем комментарий и детали в CommentsViewController
         print("Id: \(commentId), name: \(commentName), Email: \(commentEmail), body: \(commentBody)")
         commentIdLabel.text = "Comment ID: \(commentId)"
         commentNameLable.text = commentName
