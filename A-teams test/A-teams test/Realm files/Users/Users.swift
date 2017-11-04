@@ -14,7 +14,6 @@ class Users: Object {
     @objc dynamic var name = ""
     @objc dynamic var userName = ""
     @objc dynamic var userEmail = ""
-    @objc dynamic var commentBody = ""
     @objc dynamic var userCity = ""
     @objc dynamic var userStreet = ""
     @objc dynamic var userSuite = ""

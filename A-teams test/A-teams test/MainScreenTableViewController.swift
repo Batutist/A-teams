@@ -187,8 +187,12 @@ class MainScreenTableViewController: UITableViewController {
                 let destinationViewController = segue.destination as! CommentsViewController
                 destinationViewController.commentId = commentId
             }
+        } else if segue.identifier == "usersSegue" {
+            if let userId = userIdTextfield.text {
+                let destinationViewController = segue.destination as! UsersViewController
+                destinationViewController.userId = userId
+            }
         }
-        
     }
 }
 

@@ -108,7 +108,6 @@ class ManagerData {
                             user.name = subJson["name"].stringValue
                             user.userName = subJson["username"].stringValue
                             user.userEmail = subJson["email"].stringValue
-                            user.commentBody = subJson["body"].stringValue
                             user.userCity = subJson["address"]["city"].stringValue
                             user.userStreet = subJson["address"]["street"].stringValue
                             user.userSuite = subJson["address"]["suite"].stringValue
