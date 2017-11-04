@@ -40,8 +40,8 @@ class UsersViewController: UIViewController {
         // create ManagerData object
         // создаем объект класса ManagerData
         let manager = ManagerData()
-        // get comment from DB by commentId
-        // получаем комментарий из БД по ID
+        // get user from DB by commentId
+        // получаем пользователя из БД по ID
         let user = manager.getUserFromDB().filter("userId = \(userId)")
         
         for value in user {

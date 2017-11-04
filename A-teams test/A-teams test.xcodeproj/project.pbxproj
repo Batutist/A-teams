@@ -16,6 +16,7 @@
 		7D22FD441FA670F500D9854D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7D22FD431FA670F500D9854D /* .gitignore */; };
 		7D22FD461FA680C600D9854D /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22FD451FA680C600D9854D /* CommentsViewController.swift */; };
 		7D3828491FAC699300B2ADF9 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3828481FAC699300B2ADF9 /* Display.swift */; };
+		7D43B2001FAE67C2003010F5 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D43B1FF1FAE67C2003010F5 /* PhotosViewController.swift */; };
 		7D487DF31FA73CA90035BC45 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D487DF21FA73CA90035BC45 /* UsersViewController.swift */; };
 		7D6381701F98ACE8008CAAE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63816F1F98ACE8008CAAE1 /* AppDelegate.swift */; };
 		7D6381751F98ACE8008CAAE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D6381731F98ACE8008CAAE1 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		7D22FD431FA670F500D9854D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7D22FD451FA680C600D9854D /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		7D3828481FAC699300B2ADF9 /* Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
+		7D43B1FF1FAE67C2003010F5 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		7D487DF21FA73CA90035BC45 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		7D63816C1F98ACE8008CAAE1 /* A-teams test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A-teams test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D63816F1F98ACE8008CAAE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,17 @@
 			path = RandomUser;
 			sourceTree = "<group>";
 		};
+		7D43B2011FAE6B75003010F5 /* InformationViewControlers */ = {
+			isa = PBXGroup;
+			children = (
+				7DA7FE081FA347FF008AFDEB /* PostsViewController.swift */,
+				7D22FD451FA680C600D9854D /* CommentsViewController.swift */,
+				7D487DF21FA73CA90035BC45 /* UsersViewController.swift */,
+				7D43B1FF1FAE67C2003010F5 /* PhotosViewController.swift */,
+			);
+			path = InformationViewControlers;
+			sourceTree = "<group>";
+		};
 		7D6381631F98ACE8008CAAE1 = {
 			isa = PBXGroup;
 			children = (
@@ -167,9 +180,7 @@
 				7D6381731F98ACE8008CAAE1 /* Main.storyboard */,
 				7D63816F1F98ACE8008CAAE1 /* AppDelegate.swift */,
 				7DB77AF61F9F53A700F6BE43 /* ManagerData.swift */,
-				7DA7FE081FA347FF008AFDEB /* PostsViewController.swift */,
-				7D22FD451FA680C600D9854D /* CommentsViewController.swift */,
-				7D487DF21FA73CA90035BC45 /* UsersViewController.swift */,
+				7D43B2011FAE6B75003010F5 /* InformationViewControlers */,
 				7D12F87C1FA32E630000BA24 /* Realm files */,
 				7DA2B9541F9E8C36004F3F2C /* MainScreenTableViewController.swift */,
 				7D38284A1FAC7D4900B2ADF9 /* RandomUser */,
@@ -327,6 +338,7 @@
 				7D12F8731FA32E020000BA24 /* Posts.swift in Sources */,
 				7D12F8791FA32E280000BA24 /* Photos.swift in Sources */,
 				7D22FD461FA680C600D9854D /* CommentsViewController.swift in Sources */,
+				7D43B2001FAE67C2003010F5 /* PhotosViewController.swift in Sources */,
 				7D7EADFA1FABBEEB007682C8 /* RandomId.swift in Sources */,
 				7D12F87B1FA32E310000BA24 /* ToDos.swift in Sources */,
 			);
