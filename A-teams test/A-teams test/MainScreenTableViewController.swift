@@ -138,9 +138,9 @@ class MainScreenTableViewController: UITableViewController {
         
         // Create and display in UserInformationLabels five random users
         // Создаем и отображаем в UserInformationLabels 5 случайных пользователей
-        let userOneRandom = manager.getUserFromDB().filter("userId = \(userOneIdRandom)")
         // Use class Display with func infoOf(user) to display short information about random user in MainScreenTableViewController
         // Использую класс Display с функцией infoOf(user) чтобы отобразить информацию о случайном пользователе в интерфейсе MainScreenTableViewController
+        let userOneRandom = manager.getUserFromDB().filter("userId = \(userOneIdRandom)")
         userOneInformationLabel.text = Display().infoOf(user: userOneRandom)
         
         let userTwoRandom = manager.getUserFromDB().filter("userId = \(userTwoIdRandom)")
