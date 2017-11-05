@@ -485,10 +485,6 @@
                                     <action selector="photoPreviewButtonPressed:" destination="3pU-72-26s" eventType="touchUpInside" id="fEG-HD-vzx"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fAd-mC-nP7">
-                                <rect key="frame" x="67" y="490" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.7772123795680469" green="0.77615272236043087" blue="0.79466229433212443" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -502,7 +498,6 @@
                         <viewLayoutGuide key="safeArea" id="gAk-b0-zA2"/>
                     </view>
                     <connections>
-                        <outlet property="imagetest" destination="fAd-mC-nP7" id="Bwc-0L-Jhh"/>
                         <outlet property="photoIdLabel" destination="yZC-fq-1LR" id="sEq-sf-wUg"/>
                         <outlet property="photoPreviewButton" destination="Fhy-4f-IfS" id="l4D-Vv-4Ih"/>
                         <outlet property="photoTitleLabel" destination="5xQ-un-v1U" id="lpj-fH-rio"/>
@@ -511,6 +506,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7r-4W-Uqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="824.79999999999995" y="-940.47976011994012"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xgK-5b-wnH">
+            <objects>
+                <viewController id="g4w-0I-lr6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KIr-Wi-boU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="dSw-L4-s8a"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fsK-D2-lv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1508" y="-1276"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3lg-z5-FZg">

@@ -14,7 +14,6 @@ class PhotosViewController: UIViewController {
     @IBOutlet weak var photoTitleLabel: UILabel!
     @IBOutlet weak var photoPreviewButton: UIButton!
     
-    @IBOutlet weak var imagetest: UIImageView!
     @IBAction func photoPreviewButtonPressed(_ sender: UIButton) {
     }
     
@@ -37,13 +36,12 @@ class PhotosViewController: UIViewController {
             thumbnailUrl.append(value.thumbnailUrl)
             photoURL.append(value.photoURL)
         }
-        print("id: \(photoId), title: \(photoTitle), url: \(photoURL), thumbnailURL: \(thumbnailUrl)")
-        //        imagePreview.image = UIImage(data: imgData as Data)
-        //        imagetest.image = UIImage(data: imgPreviewData as Data)
-        //        let imgPreviewURL: NSURL = NSURL(string: thumbnailUrl)!
-        //        let imgPreviewData: NSData = NSData(contentsOf: imgPreviewURL as URL)!
-        //        let imagePreview: UIImage = UIImage(data: imgPreviewData as Data)!
-        //        photoPreviewButton.setImage(imagePreview, for: UIControlState.normal)
+        // загружаем превью по url
+        let imgPreviewURL: NSURL = NSURL(string: thumbnailUrl)!
+        let imgPreviewData: NSData = NSData(contentsOf: imgPreviewURL as URL)!
+        print((String(describing: imgPreviewURL)))
+        let imagePreview: UIImage = UIImage(data: imgPreviewData as Data)!
+        photoPreviewButton.setImage(imagePreview, for: UIControlState.normal)
         
     }
 }
