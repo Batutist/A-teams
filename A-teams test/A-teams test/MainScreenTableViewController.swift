@@ -204,6 +204,7 @@ class MainScreenTableViewController: UITableViewController {
 //
 //
 //        } else {
+
 //            manager.getCommentFromDB()
 //            manager.getPhotoFromDB()
 //            manager.getPostFromDB()
