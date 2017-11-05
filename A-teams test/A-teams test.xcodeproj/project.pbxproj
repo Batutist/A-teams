@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00495D0F97FD16B0970E080A /* Pods_A_teams_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69B4BBF02A2DB9D9AF9C34A /* Pods_A_teams_test.framework */; };
+		7D09F0A41FAFC87100F45BFE /* ToDosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D09F0A31FAFC87100F45BFE /* ToDosViewController.swift */; };
 		7D12F8731FA32E020000BA24 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D12F8721FA32E020000BA24 /* Posts.swift */; };
 		7D12F8751FA32E0C0000BA24 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D12F8741FA32E0C0000BA24 /* Comments.swift */; };
 		7D12F8771FA32E200000BA24 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D12F8761FA32E200000BA24 /* Users.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D09F0A31FAFC87100F45BFE /* ToDosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosViewController.swift; sourceTree = "<group>"; };
 		7D12F8721FA32E020000BA24 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		7D12F8741FA32E0C0000BA24 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
 		7D12F8761FA32E200000BA24 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				7DA7FE081FA347FF008AFDEB /* PostsViewController.swift */,
 				7D22FD451FA680C600D9854D /* CommentsViewController.swift */,
 				7D487DF21FA73CA90035BC45 /* UsersViewController.swift */,
+				7D09F0A31FAFC87100F45BFE /* ToDosViewController.swift */,
 				7D12F87C1FA32E630000BA24 /* Realm files */,
 				7DA2B9541F9E8C36004F3F2C /* MainScreenTableViewController.swift */,
 				7D38284A1FAC7D4900B2ADF9 /* RandomUser */,
@@ -322,6 +325,7 @@
 				7D487DF31FA73CA90035BC45 /* UsersViewController.swift in Sources */,
 				7DA7FE091FA347FF008AFDEB /* PostsViewController.swift in Sources */,
 				7DB77AF71F9F53A700F6BE43 /* ManagerData.swift in Sources */,
+				7D09F0A41FAFC87100F45BFE /* ToDosViewController.swift in Sources */,
 				7D3828491FAC699300B2ADF9 /* Display.swift in Sources */,
 				7D12F8771FA32E200000BA24 /* Users.swift in Sources */,
 				7D12F8731FA32E020000BA24 /* Posts.swift in Sources */,

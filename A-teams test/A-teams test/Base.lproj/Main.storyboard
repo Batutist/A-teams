@@ -482,10 +482,10 @@
             </objects>
             <point key="canvasLocation" x="825" y="-940"/>
         </scene>
-        <!--View Controller-->
+        <!--To Dos View Controller-->
         <scene sceneID="3lg-z5-FZg">
             <objects>
-                <viewController id="sgS-XL-x2E" sceneMemberID="viewController">
+                <viewController id="sgS-XL-x2E" customClass="ToDosViewController" customModule="A_teams_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AlF-W9-z3s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
