@@ -17,7 +17,7 @@ class PhotosViewController: UIViewController {
     @IBAction func photoPreviewButtonPressed(_ sender: UIButton) {
     }
     
-    var photoId = "5"
+    var photoId = ""
     var photoTitle = ""
     var thumbnailUrl = ""
     var photoURL = ""
@@ -27,6 +27,7 @@ class PhotosViewController: UIViewController {
         // create ManagerData object
         // создаем объект класса ManagerData
         let manager = ManagerData()
+        
         // get photo from DB by commentId
         // получаем фотографию из БД по ID
         let photo = manager.getPhotoFromDB().filter("photoId = \(photoId)")
@@ -36,12 +37,11 @@ class PhotosViewController: UIViewController {
             thumbnailUrl.append(value.thumbnailUrl)
             photoURL.append(value.photoURL)
         }
-        // загружаем превью по url
+        //load image by url, transfer to DATA, assign the resulting image to imagePreview and then set BackgroundImage of button using it
+        // загружаем картинку по url, переводим в DATA, присваиваем полученное изображение в imagePreview и затем устанавливаем с помощью него BackgroundImage кнопки
         let imgPreviewURL: NSURL = NSURL(string: thumbnailUrl)!
         let imgPreviewData: NSData = NSData(contentsOf: imgPreviewURL as URL)!
-        print((String(describing: imgPreviewURL)))
         let imagePreview: UIImage = UIImage(data: imgPreviewData as Data)!
-        photoPreviewButton.setImage(imagePreview, for: UIControlState.normal)
-        
+        photoPreviewButton.setBackgroundImage(imagePreview, for: UIControlState.normal)
     }
 }

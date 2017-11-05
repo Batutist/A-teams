@@ -478,12 +478,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhy-4f-IfS">
-                                <rect key="frame" x="87" y="233" width="200" height="200"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLc-N1-LVD">
+                                <rect key="frame" x="112" y="258" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="photoPreviewButtonPressed:" destination="3pU-72-26s" eventType="touchUpInside" id="fEG-HD-vzx"/>
-                                </connections>
+                                <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.7772123795680469" green="0.77615272236043087" blue="0.79466229433212443" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -499,7 +497,7 @@
                     </view>
                     <connections>
                         <outlet property="photoIdLabel" destination="yZC-fq-1LR" id="sEq-sf-wUg"/>
-                        <outlet property="photoPreviewButton" destination="Fhy-4f-IfS" id="l4D-Vv-4Ih"/>
+                        <outlet property="photoPreviewButton" destination="OLc-N1-LVD" id="nxl-d8-XNG"/>
                         <outlet property="photoTitleLabel" destination="5xQ-un-v1U" id="lpj-fH-rio"/>
                     </connections>
                 </viewController>

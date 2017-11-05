@@ -192,6 +192,11 @@ class MainScreenTableViewController: UITableViewController {
                 let destinationViewController = segue.destination as! UsersViewController
                 destinationViewController.userId = userId
             }
+        } else if segue.identifier == "photosSegue" {
+            if let photoId = photoIdTextfield.text {
+                let destinationViewController = segue.destination as! PhotosViewController
+                destinationViewController.photoId = photoId
+            }
         }
     }
 }
